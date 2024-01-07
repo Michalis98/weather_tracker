@@ -5,6 +5,7 @@ package main
 import (
 	"encoding/json"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strings"
 )
@@ -49,7 +50,8 @@ func main() {
 			w.Header().Set("Content-Type", "application/json; charset=utf8")
 			json.NewEncoder(w).Encode(data)
 		})
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":80", nil)
+	log.Println("Server Is running")
 
 }
 
